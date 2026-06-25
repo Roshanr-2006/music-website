@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundWave — Feel the Music</title>
+
+  <!-- Font Awesome icons (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts loaded inside style.css via @import -->
+  <!-- Global styles first, then page-specific -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVIGATION BAR
+       Fixed header shared across all pages.
+       data.js / main.js wire up theme toggle + hamburger.
+  ==================================================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-music"></i></div>
+        <span>SoundWave</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="artist.html?id=alex-rivers">Artist</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile slide-down menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="music.html"><i class="fas fa-music"></i> Music</a>
+    <a href="artist.html?id=alex-rivers"><i class="fas fa-user"></i> Artist</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+
+  <!-- ===================================================
+       HERO / BANNER SECTION
+       Full-height animated landing section.
+  ==================================================== -->
+  <section class="hero">
+    <!-- Animated gradient background layer -->
+    <div class="hero-bg"></div>
+
+    <!-- Floating music note particles -->
+    <div class="hero-particles">
+      <i class="fas fa-music particle"></i>
+      <i class="fas fa-headphones particle"></i>
+      <i class="fas fa-compact-disc particle"></i>
+      <i class="fas fa-microphone particle"></i>
+      <i class="fas fa-guitar particle"></i>
+      <i class="fas fa-music particle"></i>
+      <i class="fas fa-drum particle"></i>
+      <i class="fas fa-headphones particle"></i>
+      <i class="fas fa-compact-disc particle"></i>
+      <i class="fas fa-music particle"></i>
+    </div>
+
+    <!-- Main hero content -->
+    <div class="hero-content">
+      <!-- Animated badge -->
+      <div class="hero-badge">
+        <i class="fas fa-bolt"></i>
+        #1 Music Streaming Platform
+      </div>
+
+      <!-- Headline -->
+      <h1 class="hero-title">
+        Feel Every<br>
+        <span class="highlight">Beat &amp; Rhythm</span>
+      </h1>
+
+      <!-- Subheading -->
+      <p class="hero-subtitle">
+        Discover millions of songs, explore your favorite artists,
+        and lose yourself in the music that moves you.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-actions">
+        <a href="music.html" class="btn btn-primary">
+          <i class="fas fa-fire"></i> See Trending Songs
+        </a>
+        <a href="about.html" class="btn btn-outline">
+          <i class="fas fa-info-circle"></i> Learn More
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative animated waveform at bottom -->
+    <div class="hero-waveform">
+      <div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       STATS BAR
+  ==================================================== -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <h3>12+</h3>
+          <p>Songs Available</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3>6</h3>
+          <p>Featured Artists</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3>6</h3>
+          <p>Music Genres</p>
+        </div>
+        <div class="stat-item reveal">
+          <h3>∞</h3>
+          <p>Good Vibes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       FEATURED MUSIC SECTION
+       Dynamically built by a small inline script
+       (so it reuses the SONGS data from data.js).
+  ==================================================== -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Trending Now</span>
+        <h2 class="gradient-text">Featured Music</h2>
+        <div class="section-divider"></div>
+        <p>Hand-picked tracks our editors love right now</p>
+      </div>
+
+      <!-- Cards injected by JS below -->
+      <div class="featured-grid" id="featured-grid"></div>
+
+      <div style="text-align:center;margin-top:40px" class="reveal">
+        <a href="music.html" class="btn btn-primary">
+          <i class="fas fa-music"></i> View All Songs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       GENRES SECTION
+  ==================================================== -->
+  <section class="section genres-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Discover</span>
+        <h2 class="gradient-text">Browse by Genre</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="genres-grid reveal">
+        <a href="music.html" class="genre-chip">
+          <i class="fas fa-bolt"></i><span>Electronic</span>
+        </a>
+        <a href="music.html" class="genre-chip">
+          <i class="fas fa-heart"></i><span>R&amp;B / Soul</span>
+        </a>
+        <a href="music.html" class="genre-chip">
+          <i class="fas fa-guitar"></i><span>Rock</span>
+        </a>
+        <a href="music.html" class="genre-chip">
+          <i class="fas fa-fire"></i><span>Latin Pop</span>
+        </a>
+        <a href="music.html" class="genre-chip">
+          <i class="fas fa-microphone"></i><span>Hip-Hop</span>
+        </a>
+        <a href="music.html" class="genre-chip">
+          <i class="fas fa-leaf"></i><span>Indie Folk</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       ARTISTS SPOTLIGHT
+  ==================================================== -->
+  <section class="section artists-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Our Artists</span>
+        <h2 class="gradient-text">Meet the Artists</h2>
+        <div class="section-divider"></div>
+        <p>Talented creators from around the world</p>
+      </div>
+
+      <!-- Populated by inline script -->
+      <div class="artists-grid" id="artists-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       CALL-TO-ACTION
+  ==================================================== -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <i class="fas fa-headphones-alt cta-icon"></i>
+      <h2 class="reveal">Start Your <span class="gradient-text">Musical Journey</span></h2>
+      <p class="reveal">Thousands of songs waiting for you. Find your next
+        favourite track, discover new artists, and build your ultimate playlist.</p>
+      <div class="cta-actions reveal">
+        <a href="music.html" class="btn btn-primary">
+          <i class="fas fa-play"></i> Explore Music
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          <i class="fas fa-envelope"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FOOTER
+  ==================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon"><i class="fas fa-music"></i></div>
+            <span>SoundWave</span>
+          </a>
+          <p>Your ultimate destination for discovering amazing music and connecting with talented artists from around the world.</p>
+          <div class="footer-social">
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="Spotify"><i class="fab fa-spotify"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="artist.html?id=alex-rivers">Artists</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Genres -->
+        <div class="footer-col">
+          <h4>Genres</h4>
+          <ul>
+            <li><a href="music.html">Electronic</a></li>
+            <li><a href="music.html">R&amp;B / Soul</a></li>
+            <li><a href="music.html">Rock</a></li>
+            <li><a href="music.html">Latin Pop</a></li>
+            <li><a href="music.html">Hip-Hop</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Centre</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms of Use</a></li>
+            <li><a href="contact.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> SoundWave. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart" style="color:var(--secondary)"></i> for music lovers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts: data first, then shared main, then page-specific -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Inline script: build featured cards + artist spotlight from data -->
+  <script>
+    /* Featured music — show first 4 songs */
+    const featuredGrid = document.getElementById('featured-grid');
+    SONGS.slice(0, 4).forEach(song => {
+      const artist = getArtistForSong(song);
+      featuredGrid.insertAdjacentHTML('beforeend', `
+        <a href="music.html" class="featured-card reveal">
+          <div class="featured-card-img">
+            <img src="${song.cover}" alt="${song.title}" loading="lazy">
+            <div class="featured-card-overlay">
+              <div class="overlay-play"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+          <div class="featured-card-info">
+            <h4>${song.title}</h4>
+            <p>${artist?.name || ''}</p>
+            <div class="featured-card-footer">
+              <span class="badge">${song.genre}</span>
+              <span class="play-count"><i class="fas fa-headphones"></i> ${song.plays}</span>
+            </div>
+          </div>
+        </a>
+      `);
+    });
+
+    /* Artist spotlight */
+    const artistsGrid = document.getElementById('artists-grid');
+    ARTISTS.forEach(artist => {
+      artistsGrid.insertAdjacentHTML('beforeend', `
+        <a href="artist.html?id=${artist.id}" class="artist-spotlight-card reveal">
+          <img src="${artist.photo}" alt="${artist.name}" class="artist-avatar" loading="lazy">
+          <h4>${artist.name}</h4>
+          <p>${artist.genre}</p>
+          <p class="artist-followers"><i class="fas fa-users" style="margin-right:4px"></i>${artist.followers} followers</p>
+        </a>
+      `);
+    });
+  </script>
+</body>
+</html>

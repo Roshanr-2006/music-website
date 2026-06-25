@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — SoundWave</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-music"></i></div>
+        <span>SoundWave</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="artist.html?id=alex-rivers">Artist</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme"><i class="fas fa-sun"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="music.html"><i class="fas fa-music"></i> Music</a>
+    <a href="artist.html?id=alex-rivers"><i class="fas fa-user"></i> Artist</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="badge"><i class="fas fa-info-circle"></i> About</span>
+      <h1>About <span class="gradient-text">SoundWave</span></h1>
+      <p>The story behind the music platform</p>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       PROJECT OVERVIEW
+  ==================================================== -->
+  <section class="section about-overview">
+    <div class="container">
+      <div class="overview-grid">
+
+        <!-- Visual / Illustration -->
+        <div class="overview-visual reveal">
+          <div class="big-icon-wrap">
+            <i class="fas fa-headphones-alt"></i>
+            <!-- Floating chips around the icon -->
+            <div class="floating-chip"><i class="fas fa-play"></i> Stream Music</div>
+            <div class="floating-chip"><i class="fas fa-heart"></i> Favorites</div>
+            <div class="floating-chip"><i class="fas fa-search"></i> Search</div>
+            <div class="floating-chip"><i class="fas fa-moon"></i> Dark Mode</div>
+          </div>
+        </div>
+
+        <!-- Text content -->
+        <div class="overview-text reveal">
+          <span class="badge" style="margin-bottom:16px;display:inline-block">Project Overview</span>
+          <h2>What is <span class="gradient-text">SoundWave?</span></h2>
+          <p>
+            SoundWave is a fully responsive music website template built as a
+            college project to demonstrate front-end web development skills.
+            It features a rich UI, interactive music player, artist profiles,
+            and a validated contact form — all without a backend.
+          </p>
+          <p>
+            This project was built with pure HTML5, CSS3, and Vanilla JavaScript —
+            no frameworks, no libraries beyond Font Awesome and Google Fonts.
+            Everything you see is hand-coded from scratch.
+          </p>
+
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px">
+            <a href="music.html" class="btn btn-primary">
+              <i class="fas fa-play"></i> Try the Player
+            </a>
+            <a href="contact.html" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Get in Touch
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FEATURES GRID
+  ==================================================== -->
+  <section class="section features-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Capabilities</span>
+        <h2 class="gradient-text">Website Features</h2>
+        <div class="section-divider"></div>
+        <p>Everything this template includes out of the box</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h4>Fully Responsive</h4>
+          <p>Optimized for Desktop, Tablet, and Mobile devices using CSS Grid, Flexbox, and media queries.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-play-circle"></i></div>
+          <h4>Music Player</h4>
+          <p>Working audio player with play/pause, progress bar, seek, and single-song-at-a-time enforcement.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-moon"></i></div>
+          <h4>Dark / Light Theme</h4>
+          <p>Toggle between dark and light mode. Preference is saved in localStorage across sessions.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-search"></i></div>
+          <h4>Search & Filter</h4>
+          <p>Real-time search by song title, artist name, or genre. Filter results by specific artist.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-heart"></i></div>
+          <h4>Favorites Playlist</h4>
+          <p>Add songs to favorites with one click. Persisted in localStorage so your list survives page refresh.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+          <h4>Form Validation</h4>
+          <p>Contact form with real-time validation: email format, 10-digit phone, 200-word message limit.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-bell"></i></div>
+          <h4>Toast Notifications</h4>
+          <p>Animated success, error, info, and warning toasts shown for all user interactions.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-user"></i></div>
+          <h4>Artist Profiles</h4>
+          <p>Dedicated artist pages with biography, stats, songs list, social links, and contact info.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       TECHNOLOGIES USED
+  ==================================================== -->
+  <section class="section tech-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Stack</span>
+        <h2 class="gradient-text">Technologies Used</h2>
+        <div class="section-divider"></div>
+        <p>Pure web standards — no build tools, no frameworks</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card tech-html reveal">
+          <i class="fab fa-html5"></i>
+          <h4>HTML5</h4>
+          <span>Structure &amp; Semantics</span>
+        </div>
+        <div class="tech-card tech-css reveal">
+          <i class="fab fa-css3-alt"></i>
+          <h4>CSS3</h4>
+          <span>Styling &amp; Animations</span>
+        </div>
+        <div class="tech-card tech-js reveal">
+          <i class="fab fa-js-square"></i>
+          <h4>JavaScript</h4>
+          <span>Interactivity &amp; Logic</span>
+        </div>
+        <div class="tech-card tech-fa reveal">
+          <i class="fas fa-icons"></i>
+          <h4>Font Awesome 6</h4>
+          <span>Icon Library</span>
+        </div>
+        <div class="tech-card tech-gf reveal">
+          <i class="fas fa-font"></i>
+          <h4>Google Fonts</h4>
+          <span>Poppins Typography</span>
+        </div>
+        <div class="tech-card tech-ph reveal">
+          <i class="fas fa-image"></i>
+          <h4>Picsum Photos</h4>
+          <span>Placeholder Images</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       DEVELOPER CARD
+  ==================================================== -->
+  <section class="section dev-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Developer</span>
+        <h2 class="gradient-text">Meet the Developer</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="dev-card reveal">
+        <div class="dev-avatar-wrap">
+          <img src="https://picsum.photos/seed/developer/200/200"
+               alt="Developer" class="dev-avatar">
+          <span class="dev-badge">Developer</span>
+        </div>
+
+        <h3>Your Name Here</h3>
+        <p class="dev-title">Front-End Web Developer</p>
+
+        <p>
+          A passionate web developer with strong interest in building beautiful,
+          functional, and user-friendly websites. This project was created as part
+          of a college assignment to demonstrate proficiency in HTML, CSS, and
+          JavaScript.
+        </p>
+
+        <div class="dev-skills">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Responsive Design</span>
+          <span>UI/UX</span>
+        </div>
+
+        <div class="dev-links">
+          <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="contact.html" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon"><i class="fas fa-music"></i></div>
+            <span>SoundWave</span>
+          </a>
+          <p>Your ultimate destination for discovering amazing music.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-spotify"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="music.html">Music Player</a></li>
+            <li><a href="music.html">Search</a></li>
+            <li><a href="music.html">Favorites</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help</a></li>
+            <li><a href="contact.html">Privacy</a></li>
+            <li><a href="contact.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> SoundWave. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart" style="color:var(--secondary)"></i> for music lovers</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

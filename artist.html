@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist — SoundWave</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/artist.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-music"></i></div>
+        <span>SoundWave</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="artist.html?id=alex-rivers">Artist</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme"><i class="fas fa-sun"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="music.html"><i class="fas fa-music"></i> Music</a>
+    <a href="artist.html?id=alex-rivers"><i class="fas fa-user"></i> Artist</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+
+  <!-- ===================================================
+       ARTIST HERO HEADER
+       Blurred cover-art background, photo + stats overlay.
+       All content filled by artist.js dynamically.
+  ==================================================== -->
+  <section class="artist-hero">
+    <div class="artist-hero-bg" id="artist-hero-bg"></div>
+    <div class="artist-hero-overlay"></div>
+
+    <div class="artist-hero-content">
+      <!-- Artist photo -->
+      <div class="artist-photo-wrap">
+        <div id="artist-photo">
+          <!-- JS injects <img> here -->
+        </div>
+      </div>
+
+      <!-- Name, stats, socials -->
+      <div class="artist-hero-info">
+        <div id="artist-genre-badge"></div>
+        <h1 id="artist-name">Loading…</h1>
+        <p class="artist-location" id="artist-location"></p>
+
+        <!-- Key stats row -->
+        <div class="artist-stats-row">
+          <div class="artist-stat">
+            <strong id="artist-followers">—</strong>
+            <span>Followers</span>
+          </div>
+          <div class="artist-stat">
+            <strong id="artist-listeners">—</strong>
+            <span>Monthly Listeners</span>
+          </div>
+          <div class="artist-stat">
+            <strong id="artist-years">—</strong>
+            <span>Active</span>
+          </div>
+        </div>
+
+        <!-- Social media buttons -->
+        <div class="artist-social-row" id="artist-social">
+          <!-- Injected by artist.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       ARTIST BODY CONTENT
+  ==================================================== -->
+  <main class="artist-body">
+    <div class="container">
+
+      <!-- Back button -->
+      <a href="music.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Music
+      </a>
+
+      <!-- Two-column layout: bio + songs | sidebar -->
+      <div class="artist-layout">
+
+        <!-- LEFT COLUMN -->
+        <div class="artist-main">
+
+          <!-- Biography -->
+          <div class="section-card reveal">
+            <h3><i class="fas fa-user-circle"></i> About the Artist</h3>
+            <p class="artist-bio-text" id="artist-bio">Loading biography…</p>
+
+            <div class="artist-awards">
+              <i class="fas fa-trophy"></i>
+              <p id="artist-awards-text">—</p>
+            </div>
+          </div>
+
+          <!-- Popular Songs -->
+          <div class="section-card reveal">
+            <h3><i class="fas fa-chart-bar"></i> Popular Songs</h3>
+            <div class="songs-list" id="artist-songs-list">
+              <!-- Injected by artist.js -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN (sidebar) -->
+        <div class="artist-sidebar">
+
+          <!-- Contact information -->
+          <div class="section-card reveal">
+            <h3><i class="fas fa-address-card"></i> Contact Info</h3>
+            <div class="contact-info-list" id="artist-contact-list">
+              <!-- Injected by artist.js -->
+            </div>
+          </div>
+
+          <!-- Browse other artists -->
+          <div class="section-card reveal">
+            <h3><i class="fas fa-users"></i> Other Artists</h3>
+            <div id="other-artists-list" style="display:flex;flex-direction:column;gap:10px"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon"><i class="fas fa-music"></i></div>
+            <span>SoundWave</span>
+          </a>
+          <p>Your ultimate destination for discovering amazing music.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-spotify"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Genres</h4>
+          <ul>
+            <li><a href="music.html">Electronic</a></li>
+            <li><a href="music.html">R&amp;B / Soul</a></li>
+            <li><a href="music.html">Rock</a></li>
+            <li><a href="music.html">Hip-Hop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help</a></li>
+            <li><a href="contact.html">Privacy</a></li>
+            <li><a href="contact.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> SoundWave. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart" style="color:var(--secondary)"></i> for music lovers</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/artist.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const currentId = new URLSearchParams(window.location.search).get('id');
+      const list = document.getElementById('other-artists-list');
+      if (!list) return;
+      ARTISTS.filter(a => a.id !== currentId).forEach(a => {
+        list.insertAdjacentHTML('beforeend', `
+          <a href="artist.html?id=${a.id}"
+             style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;
+                    border:1px solid var(--border);background:var(--bg);transition:var(--transition);
+                    text-decoration:none;color:inherit"
+             onmouseover="this.style.borderColor='var(--primary)'"
+             onmouseout="this.style.borderColor='var(--border)'">
+            <img src="${a.photo}" alt="${a.name}"
+                 style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+            <div>
+              <strong style="display:block;font-size:.88rem">${a.name}</strong>
+              <span style="font-size:.75rem;color:var(--text-muted)">${a.genre}</span>
+            </div>
+          </a>`);
+      });
+    });
+  </script>
+</body>
+</html>

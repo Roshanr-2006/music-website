@@ -1,0 +1,246 @@
+/* ============================================================
+   ABOUT.CSS — SoundWave Music Website
+   ============================================================ */
+
+/* ---- OVERVIEW ---- */
+.about-overview { background: var(--bg); }
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.overview-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Big animated music icon */
+.big-icon-wrap {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(108,99,255,0.08);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.big-icon-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 2px dashed rgba(108,99,255,0.2);
+  animation: spin 20s linear infinite;
+}
+
+.big-icon-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255,101,132,0.15);
+  animation: spin 30s linear infinite reverse;
+}
+
+.big-icon-wrap i {
+  font-size: 6rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse 3s ease infinite;
+}
+
+/* Floating feature chips around the big icon */
+.floating-chip {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-card);
+  animation: float 6s ease-in-out infinite;
+}
+.floating-chip i { color: var(--primary); }
+.floating-chip:nth-child(2) { top: 5%;   left: -30%; animation-delay: 0s; }
+.floating-chip:nth-child(3) { top: 5%;   right:-30%; animation-delay: 1s; }
+.floating-chip:nth-child(4) { bottom:5%; left: -30%; animation-delay: 2s; }
+.floating-chip:nth-child(5) { bottom:5%; right:-30%; animation-delay: 3s; }
+
+.overview-text h2 { font-size: 2.2rem; margin-bottom: 18px; }
+.overview-text p  { color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; font-size: 0.97rem; }
+
+/* ---- FEATURES GRID ---- */
+.features-section { background: var(--bg-secondary); }
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.feature-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(108,99,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  background: var(--gradient);
+  color: white;
+}
+
+.feature-card h4 { font-size: 1rem; margin-bottom: 10px; }
+.feature-card p  { color: var(--text-muted); font-size: 0.87rem; line-height: 1.7; }
+
+/* ---- TECH STACK ---- */
+.tech-section { background: var(--bg); }
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.tech-card i    { font-size: 2.2rem; margin-bottom: 12px; }
+.tech-card h4   { font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+.tech-card span { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Tech icon colors */
+.tech-html  i { color: #E44D26; }
+.tech-css   i { color: #264DE4; }
+.tech-js    i { color: #F7DF1E; }
+.tech-fa    i { color: var(--secondary); }
+.tech-gf    i { color: #DB4437; }
+.tech-ph    i { color: var(--accent); }
+
+/* ---- DEVELOPER CARD ---- */
+.dev-section { background: var(--bg-secondary); }
+
+.dev-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.dev-avatar-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.dev-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  outline: 4px solid var(--primary);
+  outline-offset: 4px;
+  box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.dev-badge {
+  position: absolute;
+  bottom: 5px; right: -10px;
+  background: var(--gradient);
+  color: white;
+  border-radius: 50px;
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.dev-card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.dev-card .dev-title { color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; }
+.dev-card p  { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 24px; }
+
+.dev-skills { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.dev-skills span {
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(108,99,255,0.12);
+  color: var(--primary);
+  border: 1px solid rgba(108,99,255,0.25);
+}
+
+.dev-links { display: flex; gap: 12px; justify-content: center; }
+.dev-links a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.dev-links a:hover { background: var(--gradient); border-color: transparent; color: white; transform: translateY(-3px); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .overview-grid { grid-template-columns: 1fr; }
+  .overview-visual { display: none; }
+}
+
+@media (max-width: 600px) {
+  .dev-card { padding: 28px 20px; }
+  .tech-grid { grid-template-columns: repeat(3,1fr); }
+}
