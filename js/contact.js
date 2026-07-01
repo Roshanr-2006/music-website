@@ -93,6 +93,8 @@ function handleSubmit(e) {
   e.preventDefault();   /* Stop real form submission */
 
   if (!validateForm()) {
+    /* Remove any existing error toast so only one is shown at a time */
+    document.querySelectorAll('#toast-container .toast.error').forEach(t => t.remove());
     showToast('Please fix the errors before submitting.', 'error');
     /* Scroll to first error */
     document.querySelector('.is-invalid')?.scrollIntoView({ behavior: 'smooth', block: 'center' });

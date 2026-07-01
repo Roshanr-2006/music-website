@@ -79,6 +79,7 @@ function renderArtistPage(artist, songs) {
   }
 
   renderSongsList(songs);
+  renderMusicDetails(songs);
 }
 
 /* ── Songs list ───────────────────────────────────────────── */
@@ -102,6 +103,28 @@ function renderSongsList(songs) {
       <button class="song-row-play" aria-label="Play ${song.title}">
         <i class="fas fa-play"></i>
       </button>
+    </div>
+  `).join('');
+}
+
+/* ── Music Details ────────────────────────────────────────── */
+function renderMusicDetails(songs) {
+  const container = document.getElementById('artist-music-details');
+  if (!container) return;
+
+  container.innerHTML = songs.map(song => `
+    <div class="music-detail-row">
+      <img src="${song.cover}" alt="${song.title}" class="music-detail-cover"
+           onerror="this.src='https://picsum.photos/seed/${song.id}/300/300'">
+      <div class="music-detail-info">
+        <h4>${song.title}</h4>
+        <div class="music-detail-meta">
+          <span><i class="fas fa-music"></i> ${song.genre}</span>
+          <span><i class="fas fa-clock"></i> ${song.duration}</span>
+          <span><i class="fas fa-calendar-alt"></i> ${song.year}</span>
+          <span><i class="fas fa-headphones"></i> ${song.plays} plays</span>
+        </div>
+      </div>
     </div>
   `).join('');
 }

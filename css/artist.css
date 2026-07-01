@@ -285,6 +285,43 @@
 }
 .back-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateX(-4px); }
 
+/* ---- MUSIC DETAILS ---- */
+.music-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.music-detail-row:last-child { border-bottom: none; }
+
+.music-detail-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.music-detail-info { flex: 1; min-width: 0; }
+.music-detail-info h4 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.music-detail-meta i { color: var(--primary); margin-right: 4px; }
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
   .artist-layout { grid-template-columns: 1fr; }

@@ -84,8 +84,8 @@ function renderMusicCards(songs) {
         </div>
 
         <p class="music-phone">
-          <i class="fas fa-headphones" style="margin-right:4px;color:var(--primary)"></i>
-          ${song.plays} plays
+          <i class="fas fa-phone" style="margin-right:4px;color:var(--primary)"></i>
+          ${artist?.phone || 'N/A'}
         </p>
 
         <div class="progress-wrap">
